@@ -452,6 +452,7 @@ img {
 .program__card:hover .program__button{
   opacity: 1;
 }
+<<<<<<< HEAD
 ==========*/
 .logos__container{
   grid-template-columns: repeat(2, 1fr);
@@ -462,6 +463,8 @@ img {
 .logos__img{
   width: 120px;
 }
+=======
+>>>>>>> c16375ccbcfaa3ef4c929ebefca8ad0ba8d763fe
 
 /*=============== CHOOSE ===============*/
 .choose{

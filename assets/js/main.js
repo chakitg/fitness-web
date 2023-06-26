@@ -74,8 +74,21 @@ const calculateBmi = (e) => {
 
         if(bmi < 18.5){
             calculateMessage.classList.add('color-green')
-            calculateMessage.textContent = `Your BMI is ${bmi} and you are skinny 😞`
+            calculateMessage.textContent = `Your BMI is ${bmi} and you are skinny 😔`
+        } else if(bmi < 25){
+            calculateMessage.classList.add('color-green')
+            calculateMessage.textContent = `Your BMI is ${bmi} and you are healthy 🥳`
+        } else{
+            calculateMessage.classList.add('color-green')
+            calculateMessage.textContent = `Your BMI is ${bmi} and you are overweight 😶‍🌫️`
         }
+
+        calculateCm.value = ''
+        calculateKg.value = ''
+
+        setTimeout(() =>{
+            calculateMessage.textContent = ''
+        }, 4000)
     }
 }
 calculateForm.addEventListener('submit', calculateBmi)

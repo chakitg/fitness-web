@@ -634,7 +634,73 @@ img {
 }
 
 /*=============== CALCULATE ===============*/
+.calculate{
+  padding-bottom: 0;
+}
 
+.calculate__container{
+  row-gap: 4rem;
+}
+
+.calculate__content .section__titles{
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.calculate__description{
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.calculate__form{
+  display: grid;
+  row-gap: 1rem;
+}
+
+.calculate__box{
+  position: relative;
+  border: 2px solid var(--first-color-light);
+}
+
+.calculate__input{
+  width: 100%;
+  background: transparent;
+  padding: 20px 50px 20px 24px;
+  outline: none;
+  border: none;
+  color: var(--text-color);
+}
+
+.calculate__input::-webkit-outer-spin-button,
+.calculate__input::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calculate__input[type=number]{
+  -moz-appearance: textfield;
+}
+
+.calculate__label{
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  color: var(--title-color);
+}
+
+.calculate__form .button{
+  margin-top: 1.5rem;
+}
+
+.calculate__img{
+  width: 200px;
+  justify-self: center;
+}
+
+.calculate__message{
+  position: absolute;
+  transform: translateY(1rem);
+}
 
 /*=============== FOOTER ===============*/
 

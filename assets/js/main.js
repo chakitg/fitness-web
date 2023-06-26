@@ -49,6 +49,40 @@ window.addEventListener('scroll', scrollHeader)
 
 
 /*=============== CALCULATE JS ===============*/
+const calculateForm = document.getElementById('calculate-form'),
+      calculateCm = document.getElementById('calculate-cm'),
+      calculateKg = document.getElementById('calculate-kg'),
+      calculateMessage = document.getElementById('calculate-message')
+
+const calculateBmi = (e) => {
+    e.preventDefault()
+
+
+    if(calculateCm.value === '' || calculateKg.value === ''){
+        calculateMessage.classList.remove('color-green')
+        calculateMessage.classList.add('color-red')
+
+        calculateMessage.textContent = 'Fill in your Height and Weight 🧑‍💻'
+
+        setTimeout(() =>{
+            calculateMessage.textContent = ''
+        }, 3000)
+    }else{
+        const cm = calculateCm.value / 100,
+        kg = calculateKg.value,
+        bmi = Math.round(kg / (cm * cm))
+
+        if(bmi < 18.5){
+            calculateMessage.classList.add('color-green')
+            calculateMessage.textContent = `Your BMI is ${bmi} and you are skinny 😞`
+        }
+    }
+}
+calculateForm.addEventListener('submit', calculateBmi)
+
+
+
+
 
 
 /*=============== EMAIL JS ===============*/

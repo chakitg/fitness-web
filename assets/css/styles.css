@@ -10,7 +10,7 @@
   --first-color: hsl(79, 72%, 55%);
   --first-color-light: hsl(79, 97%, 77%);
   --first-color-alt: hsl(79, 67%, 52%);
-  --first-color-dark: hsl(79, 63%, 50%);
+  --first-color-dark: hsla(79, 63%, 50%, 0.914);
   --first-color-gray: hsl(79, 6%, 64%);
   --title-color: hsl(180, 4%, 98%);
   --title-color-black: hsl(180, 4%, 12%);
@@ -660,6 +660,7 @@ img {
 .calculate__box{
   position: relative;
   border: 2px solid var(--first-color-light);
+  border-radius: 5px;
 }
 
 .calculate__input{
@@ -703,7 +704,119 @@ img {
 }
 
 /*=============== FOOTER ===============*/
+.footer__container{
+  row-gap: 4rem;
+  padding-top: 1rem;
+}
 
+.footer__logo,
+.footer__description{
+  color: var(--title-color);
+  font-weight: 800;
+}
+
+.footer__container form .button{
+  border-radius: 5px;
+}
+
+.footer__logo,
+.footer__form,
+.footer__social{
+  display: flex;
+}
+
+.footer__logo{
+  align-items: center;
+  column-gap: .5rem;
+  font-weight: var(--font-bold);
+  margin-bottom: 1.5rem;
+}
+
+.footer__logo{
+  width: 1.5rem;
+}
+
+.footer__description{
+  margin-bottom: 2rem;
+}
+
+.footer__form{
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer__input{
+  padding: 20px 56px 20px 24px;
+  border: 2px solid var(--first-color-light);
+  background: transparent;
+  color: var(--text-color);
+  outline: none;
+  border-radius: 5px;
+}
+
+.footer__content,
+.footer__links,
+.footer__group{
+  display: grid;
+}
+
+.footer__content{
+  grid-template-columns: repeat(2, max-content);
+  gap: 2.5rem 3.5rem;
+}
+
+.footer__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: 1.5rem;
+}
+
+.footer__links{
+  row-gap: .75rem;
+}
+
+.footer__link{
+  color: var(--text-color);
+  transition: color .3s;
+}
+
+
+.footer__link:hover{
+  color: var(--first-color);
+}
+
+.footer__group{
+  margin-top: 5rem;
+  justify-items: center;
+  row-gap: 2rem;
+}
+
+.footer__social{
+  column-gap: 1.25rem;
+}
+
+.footer__social-link{
+  display: inline-flex;
+  padding: .35rem;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: var(--title-color-black);
+  transition: background .4s;
+}
+
+.footer__social-link:hover{
+  background-color: var(--first-color-dark);
+}
+
+.footer__copy{
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+.footer__message{
+  position: absolute;
+  transform: translateY(1rem);
+}
 
 /*=============== SCROLL BAR ===============*/
 

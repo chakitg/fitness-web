@@ -40,7 +40,25 @@ const scrollHeader = () =>{
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]')
+    
+const scrollActive = () =>{
+  	const scrollY = window.pageYOffset
 
+	sections.forEach(current =>{
+		const sectionHeight = current.offsetHeight,
+			  sectionTop = current.offsetTop - 58,
+			  sectionId = current.getAttribute('id'),
+			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+		if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+			sectionsClass.classList.add('active-link')
+		}else{
+			sectionsClass.classList.remove('active-link')
+		}                                                    
+	})
+}
+window.addEventListener('scroll', scrollActive)
 
 /*=============== SHOW SCROLL UP ===============*/ 
 
@@ -93,9 +111,38 @@ const calculateBmi = (e) => {
 }
 calculateForm.addEventListener('submit', calculateBmi)
 
-
-
-
-
-
 /*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+      contactMessage = document.getElementById('contact-message'),
+      contactUser = document.getElementById('contact-user')
+
+const sendEmail = (e) => {
+    e.preventDefault()
+
+    if(contactUser.value === ''){
+        contactMessage.classList.remove('color-green')
+        contactMessage.classList.add('color-red')
+
+        contactMessage.textContent = `You must enter your email ☝️`
+
+        setTimeout(() => {
+            contactMessage.textContent = ''
+        }, 3000) 
+    }else{
+        // serviceID - templateID - #form - publickey
+        emailjs.sendForm('service_npe37mc', 'template_tzqb46i', '#contact-form', 'YZTNKgzSWKNvZpGnK')
+            .then(() =>{
+                contactMessage.classList.add('color-green')
+                contactMessage.textContent = `You Registered Successfully 💪`
+
+                setTimeout(() =>{
+                    contactMessage.textContent = ''
+                }, 3000)
+            }, (error) =>{
+                alert(`OOPS! SOMETHING HAS FAILED...`, error)
+            })
+        contactUser.value = ''
+    }
+}
+
+contactForm.addEventListener('submit', sendEmail)

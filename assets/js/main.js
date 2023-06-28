@@ -77,7 +77,11 @@ const sr = ScrollReveal({
     delay: 400,
 })
 
-sr.reveal(`.home__data`)
+sr.reveal(`.home__data, .footer__container, .footer__group`)
+sr.reveal(`.home__img`, {delay:700, origin: 'bottom'})
+sr.reveal(`.logos__img, .program__card, .pricing__card`, {interval: 100})
+sr.reveal(`.choose__img, calculate__content`, {origin: 'left'})
+sr.reveal(`.choose__content, calculate__img`, {origin: 'right'})
 
 /*=============== CALCULATE JS ===============*/
 const calculateForm = document.getElementById('calculate-form'),
@@ -143,19 +147,20 @@ const sendEmail = (e) => {
         }, 3000) 
     }else{
         // serviceID - templateID - #form - publickey
-        emailjs.sendForm('service_npe37mc', 'template_tzqb46i', '#contact-form', 'YZTNKgzSWKNvZpGnK')
-            .then(() =>{
+        // emailjs.sendForm('service_npe37mc', 'template_tzqb46i', '#contact-form', 'YZTNKgzSWKNvZpGnK')
+            // .then(() =>{
                 contactMessage.classList.add('color-green')
                 contactMessage.textContent = `You Registered Successfully 💪`
 
                 setTimeout(() =>{
                     contactMessage.textContent = ''
                 }, 3000)
-            }, (error) =>{
-                alert(`OOPS! SOMETHING HAS FAILED...`, error)
-            })
+            }
+            // , (error) =>{
+            //     alert(`OOPS! SOMETHING HAS FAILED...`, error)
+            // })
         contactUser.value = ''
     }
-}
+// }
 
 contactForm.addEventListener('submit', sendEmail)

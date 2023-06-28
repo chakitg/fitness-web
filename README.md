@@ -5,6 +5,9 @@ A web application showcasing my Design of a fitness Website - 💪SCULPT
 > Live Preview: https://chakitg.github.io/fitness-web/
 
 [![Practice](https://img.shields.io/badge/Practice-HTML/CSS/JS-orange.svg)]()
+[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com//chakitg/chakitg.github.io/)
+[![Website shields.io](https://img.shields.io/badge/website-up-yellow)](http://chakitg.github.io/)
+[![Ask Me Anything !](https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg)](https://www.linkedin.com/in/chakit-gupta/)
 
 _<p align="center">"Eating website for fun... nyom nyom nyom"</p>_
 
